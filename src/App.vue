@@ -11,15 +11,12 @@
               @close="modalFirst = !modalFirst">
             <!-- body -->
             <div slot="body">
-              <p> Text Text Text Text Text Text Text </p>
-              <button class="btn" @click="modalFirst = !modalFirst">Well Done!</button>
+              <p> That slot works </p>
+              <button class="btn" @click="modalFirst = !modalFirst">Close modal!</button>
             </div>
           </modals>
-
         </div>
       </section>
-
-
     </div>
   </div>
 </template>

@@ -39,12 +39,10 @@ export default {
 
 <style lang="scss" scoped>
 // Animation
-.modal-enter {
+.modal-enter, .modal-leave-active {
   opacity: 0
 }
-.modal-leave-active {
-  opacity: 0
-}
+
 .modal-enter .modal-content,
 .modal-leave-active .modal-content {
   transform: scale(1.2)
