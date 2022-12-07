@@ -6,7 +6,7 @@
           <button class="btn" @click="modalFirst = !modalFirst">Show first modal</button>
 
           <!-- first modal -->
-          <modals
+          <modal
               title="First modal"
               v-show="modalFirst"
               @close="modalFirst = false">
@@ -15,11 +15,11 @@
               <p> That slot works </p>
               <button class="btn" @click="modalFirst = false">Close modal!</button>
             </div>
-          </modals>
+          </modal>
 
           <!-- second modal -->
           <button class="btn" @click="modalSecond.show = !modalSecond.show">Show second modal</button>
-          <modals
+          <modal
               title="Modal with form"
               v-show="modalSecond.show"
               @close="modalSecond.show = false">
@@ -32,9 +32,11 @@
                 <input type="email" required v-model="modalSecond.email">
                 <button class="btn">Submit</button>
               </form>
-
             </div>
-          </modals>
+          </modal>
+            <!-- Modal with validate-->
+              <button class="btn" @click="modalValidate = !modalValidate">Modal validate</button>
+              <modalValidate v-show="modalValidate" @close="modalValidate = false"/>
         </div>
       </section>
     </div>
@@ -42,13 +44,15 @@
 </template>
 
 <script>
-import modals from '@/components/Modal.vue'
+import modal from '@/components/UI/Modal.vue'
+import modalValidate from '@/components/ModalValidate.vue'
 
 export default {
-  components: {modals},
+  components: {modal, modalValidate},
   data() {
     return {
       modalFirst: false,
+      modalValidate: false,
       modalSecond: {
         show: false,
         name: '',
@@ -70,7 +74,7 @@ export default {
 }
 
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .btn {
   padding: 15px;
   background-color: coral;
